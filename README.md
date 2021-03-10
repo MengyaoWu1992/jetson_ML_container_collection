@@ -27,25 +27,26 @@ You need to install library used inside train_download.py
 
 run: python3 train_download.py
 
-you will get following console output:
-      2021-03-09 19:06:21.568330: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.2
-       * Serving Flask app "train_download" (lazy loading)
-       * Environment: production
+you will get following console output
+
+        2021-03-09 19:06:21.568330: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.10.2
+        * Serving Flask app "train_download" (lazy loading)
+        * Environment: production
          WARNING: This is a development server. Do not use it in a production deployment.
          Use a production WSGI server instead.
-       * Debug mode: off
-       * Running on all addresses.
+        * Debug mode: off
+        * Running on all addresses.
          WARNING: This is a development server. Do not use it in a production deployment.
-       * Running on http://192.168.0.129:5000/ (Press CTRL+C to quit)
+        * Running on http://192.168.0.129:5000/ (Press CTRL+C to quit)
 
-       Follow the console print "http://192.168.0.129:5000/", but you cannot directly use this link, refer to file train_download.py
-       Inside the code, locate "@app.route('/upload', methods = ["GET","POST"])", we need to append "/upload" to the address so invoke the function def file_upload()
-       the gives you the address  http://192.168.0.129:5000/upload
+Follow the console print "http://192.168.0.129:5000/", but you cannot directly use this link, refer to file train_download.py
+Inside the code, locate "@app.route('/upload', methods = ["GET","POST"])", we need to append "/upload" to the address so invoke the function def file_upload()
+the gives you the address  http://192.168.0.129:5000/upload
  
  
  For container, first build the docker image, check the Dockerfile in build directory, docker build command follows the steps specific in Dockerfile
  
- ************sudo docker build build -t train_demo --network=host**********************
+ sudo docker build build -t train_demo --network=host
  
  you will see console print below, it shows the steps specificed in the Dockerfile
  
@@ -64,9 +65,10 @@ in the build command, -t stands for tag, that is your docker image name, first "
 
 Now check the image built
 
-**************** sudo docker images *****************************
-    REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
-    train_demo                      latest              4f052926059e        4 minutes ago       2.11GB
+sudo docker images
+
+        REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
+        train_demo                      latest              4f052926059e        4 minutes ago       2.11GB
 
 
 You can see the name "train_demo" for the image we just built.
@@ -78,7 +80,8 @@ You can run it 2 modes, attached and detached. Attached mode will give you shell
  sudo docker run -p 5000:5000 -it train_demo /bin/bash
  
  detached mode
- ********************sudo docker run -p 5000:5000 -d train_demo ***************************
+ sudo docker run -p 5000:5000 -d train_demo
+ 
  prints a id like 0114d0e664d36af6a6ab43ab323abfbe36d3bc69274d954cd69286064da214ec
  
  Check the running container
@@ -88,7 +91,7 @@ You can run it 2 modes, attached and detached. Attached mode will give you shell
     0114d0e664d3        train_demo          "/bin/sh -c 'python3…"   43 seconds ago      Up 42 seconds       0.0.0.0:5000->5000/tcp   funny_grothendieck
  
  to check logs (console print inside container)
- *********************sudo docker logs 0114d0e664d3**************************
+ sudo docker logs 0114d0e664d3
  
 
 
