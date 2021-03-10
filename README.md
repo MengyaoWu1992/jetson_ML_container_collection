@@ -6,21 +6,22 @@ git clone https://github.com/MengyaoWuNotAvailable/jetson_ML_container_collectio
 cd jetson_ML_container_collection/
 
 Repo structure
-├── combine
-│   └── build
-│       ├── Dockerfile
-│       ├── templates
-│       │   └── index.html
-│       └── upload_download.py
-├── README.md
-└── train
-    └── build
-        ├── Dockerfile
-        ├── templates
-        │   └── index.html
-        └── train_download.py
 
-6 directories, 7 files
+        ├── combine
+        │   └── build
+        │       ├── Dockerfile
+        │       ├── templates
+        │       │   └── index.html
+        │       └── upload_download.py
+        ├── README.md
+        └── train
+            └── build
+                ├── Dockerfile
+                ├── templates
+                │   └── index.html
+                └── train_download.py
+
+        6 directories, 7 files
 
 Inside the train/build, train_download.py and folder templates should be boundled together
 You need to install library used inside train_download.py
