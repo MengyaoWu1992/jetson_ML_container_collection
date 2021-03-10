@@ -1,9 +1,9 @@
 # jetson_ML_container_collection
 flask with ML training, model merge, transfer learning functions inside container
 
-git clone https://github.com/MengyaoWuNotAvailable/jetson_ML_container_collection.git
+        git clone https://github.com/MengyaoWuNotAvailable/jetson_ML_container_collection.git
 
-cd jetson_ML_container_collection/
+        cd jetson_ML_container_collection/
 
 Repo structure
 
@@ -26,7 +26,7 @@ Repo structure
 Inside the train/build, train_download.py and folder templates should be boundled together
 You need to install library used inside train_download.py
 
-run: python3 train_download.py
+        run: python3 train_download.py
 
 you will get following console output
 
@@ -47,7 +47,7 @@ the gives you the address  http://192.168.0.129:5000/upload
  
  For container, first build the docker image, check the Dockerfile in build directory, docker build command follows the steps specific in Dockerfile
  
- sudo docker build build -t train_demo --network=host
+        sudo docker build build -t train_demo --network=host
  
  you will see console print below, it shows the steps specificed in the Dockerfile
  
@@ -66,7 +66,7 @@ in the build command, -t stands for tag, that is your docker image name, first "
 
 Now check the image built
 
-sudo docker images
+        sudo docker images
 
         REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
         train_demo                      latest              4f052926059e        4 minutes ago       2.11GB
@@ -78,21 +78,25 @@ now you can run the docker image, once it is running, it is called container (a 
 You can run it 2 modes, attached and detached. Attached mode will give you shell terminal of the container. Detached will make the container run in the background.
 
  Attached to container shell command
- sudo docker run -p 5000:5000 -it train_demo /bin/bash
+ 
+        sudo docker run -p 5000:5000 -it train_demo /bin/bash
  
  detached mode
- sudo docker run -p 5000:5000 -d train_demo
  
- prints a id like 0114d0e664d36af6a6ab43ab323abfbe36d3bc69274d954cd69286064da214ec
+        sudo docker run -p 5000:5000 -d train_demo
+ 
+        prints a id like 0114d0e664d36af6a6ab43ab323abfbe36d3bc69274d954cd69286064da214ec
  
  Check the running container
- sudo docker container ls
+ 
+        sudo docker container ls
  
      CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
     0114d0e664d3        train_demo          "/bin/sh -c 'python3…"   43 seconds ago      Up 42 seconds       0.0.0.0:5000->5000/tcp   funny_grothendieck
  
  to check logs (console print inside container)
- sudo docker logs 0114d0e664d3
+ 
+        sudo docker logs 0114d0e664d3
  
 
 
