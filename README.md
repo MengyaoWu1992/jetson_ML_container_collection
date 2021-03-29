@@ -1,5 +1,5 @@
 # jetson_ML_container_collection
-Note that, the base image in the dockerfile is for Nvidia's jetson products, such as jetson nano. The image is for ARM64. If you wish to use the dockerfile to build docker image for PC (X84), change it to a linux base image which contains tensorflow gpu lib.
+Note that, the base image in the dockerfile is for Nvidia's jetson products, such as jetson nano. The image is for ARM64. If you wish to use the dockerfile to build docker image for PC (X86), change it to a linux base image which contains tensorflow gpu lib.
 
 Flask with ML training, model merge, transfer learning functions inside container
 
