@@ -1,7 +1,8 @@
 # jetson_ML_container_collection
 Note that, the base image in the dockerfile is for Nvidia's jetson products, such as jetson nano. The image is for ARM64. If you wish to use the dockerfile to build docker image for PC (X86), change it to a linux base image which contains tensorflow gpu lib.
 
-Flask with ML training, model merge, transfer learning functions inside container
+Flask with supervised ML training, model merge, transfer learning functions inside container. When the program or container runs, go to specified address (output from the program), you will see a web interface (built with flask) with few upload options. You can upload .h5 Keras model, labelled data. Note that the labelled data in stored in a structure used by Udacity self-driving car simulator. As a result, when you check the code, it's doing lablled data extraction based on the directory structure.
+After click on the button for uploading files, the correspodning ML functions will be invoked in the background. After web page redirected for downloading, the download button enbale you to download the trained (retrained, merged) model.
 
         git clone https://github.com/MengyaoWuNotAvailable/jetson_ML_container_collection.git
 
