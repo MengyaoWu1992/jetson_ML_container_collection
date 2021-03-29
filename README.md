@@ -1,5 +1,7 @@
 # jetson_ML_container_collection
-flask with ML training, model merge, transfer learning functions inside container
+Note that, the base image in the dockerfile is for Nvidia's jetson products, such as jetson nano. The image is for ARM64. If you wish to use the dockerfile to build docker image for PC (X84), change it to a linux base image which contains tensorflow gpu lib.
+
+Flask with ML training, model merge, transfer learning functions inside container
 
         git clone https://github.com/MengyaoWuNotAvailable/jetson_ML_container_collection.git
 
@@ -24,7 +26,7 @@ Repo structure
         6 directories, 7 files
 
 Inside the train/build, train_download.py and folder templates should be boundled together
-You need to install library used inside train_download.py
+To run without docker image (directly on linux os), you need to install library used inside train_download.py
 
         run: python3 train_download.py
 
@@ -45,7 +47,7 @@ Inside the code, locate "@app.route('/upload', methods = ["GET","POST"])", we ne
 the gives you the address  http://192.168.0.129:5000/upload
  
  
- For container, first build the docker image, check the Dockerfile in build directory, docker build command follows the steps specific in Dockerfile
+ For container, first build the docker image, check the Dockerfile in build directory, docker build command follows the steps specified in Dockerfile
  
         sudo docker build build -t train_demo --network=host
  
